@@ -1,11 +1,16 @@
 {
 	"name": "@smartlook/circular-deps-detector",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Package to detect circular dependencies and unused files in TypeScript projects.",
 	"author": "Smartlook",
 	"license": "MIT",
 	"type": "commonjs",
 	"main": "dist/index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/smartlook/circular-deps-detector.git"
+	},
+	"homepage": "https://github.com/smartlook/circular-deps-detector",
 	"bin": {
 		"detect-circular-deps": "./bin/detect-circular-deps"
 	},
