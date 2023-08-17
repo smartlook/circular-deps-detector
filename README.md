@@ -3,19 +3,19 @@
 NPM
 
 ```
-npm i @smartlook/circular-deps-detection
+npm i @smartlook/circular-deps-detector
 ```
 
 YARN
 
 ```
-yarn add @smartlook/circular-deps-detection
+yarn add @smartlook/circular-deps-detector
 ```
 
 PNPM
 
 ```
-pnpm add @smartlook/circular-deps-detection
+pnpm add @smartlook/circular-deps-detector
 ```
 
 ### Usage
