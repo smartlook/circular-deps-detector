@@ -7,3 +7,10 @@ export interface IReport {
 	}[]
 	unusedFiles: string[]
 }
+
+
+export interface IProgressBar {
+	start: (options: { total: number }) => void
+	stop: (message: string) => void
+	update: (options: { value: number }) => void
+}

@@ -3,6 +3,8 @@ import { Project } from 'ts-morph'
 
 import { Stack } from './stack'
 import { IConfig } from './config'
+import { NonTTYProgressBar } from './non-tty-progress-bar'
+import { IProgressBar } from './types'
 
 export interface IGlobalContext {
 	config: IConfig
@@ -11,7 +13,7 @@ export interface IGlobalContext {
 	visitedPaths: string[]
 	currentStack: Stack<string>
 	cycles: string[][]
-	progressBar: ProgressBar
+	progressBar: IProgressBar
 }
 
 export const GlobalContext: IGlobalContext = {
@@ -21,8 +23,9 @@ export const GlobalContext: IGlobalContext = {
 	visitedPaths: [],
 	currentStack: new Stack(),
 	cycles: [],
-	progressBar: new ProgressBar({
+	// Some CLIs do not have a TTY, so we need to check for that.
+	progressBar: (!!process.stdout.cursorTo as unknown) ? new ProgressBar({
 		color: 'teal',
 		autoClear: true,
-	}),
+	}) : new NonTTYProgressBar(),
 }
